@@ -6,7 +6,7 @@ const endOfLine = require('os').EOL;
 const base = path.join(__dirname, '../src');
 const OUTPUT_PATH = path.join(base, 'index.ts');
 
-const omit = (f) => f !== 'test' && f !== 'index';
+const omit = (f) => f !== 'index';
 
 const files = fs
   .readdirSync(base)

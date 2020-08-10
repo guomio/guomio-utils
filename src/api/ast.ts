@@ -1,7 +1,7 @@
 import ts from 'typescript';
 import fs from 'fs';
 import path from 'path';
-import { isEmpty } from '../../util';
+import { isEmpty } from '../util';
 
 interface SourceFile extends ts.SourceFile {
   resolvedModules?: Map<string, ts.ResolvedModuleFull>;

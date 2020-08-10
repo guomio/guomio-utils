@@ -1,4 +1,4 @@
-import { API } from '../../api';
+import { API } from '../../src/api';
 
 export interface Response {
   data?: any;

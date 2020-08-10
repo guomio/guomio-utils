@@ -11,6 +11,6 @@
     "resolveJsonModule": true,
     "lib": ["ESNext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["src/**/*.ts", "src/test/index.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }

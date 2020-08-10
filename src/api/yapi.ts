@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { API } from '../index';
-import { isHTTP, isEmpty } from '../../util';
-import { MockDictionary, PropertyDictionary } from './index';
+import { API } from './index';
+import { isHTTP, isEmpty } from '../util';
+import { MockDictionary, PropertyDictionary } from './ast';
 
 interface ApiResponse {
   errcode: number;

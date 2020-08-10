@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { named } from '../vuex';
+import { named } from '../src/vuex';
 import { VuexModule, Module, Mutation } from 'vuex-module-decorators';
 
 Vue.use(Vuex);

@@ -7,7 +7,7 @@ import {
   createState,
   createEpicStore,
   updateReducer,
-} from '../redux';
+} from '../src/redux';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
