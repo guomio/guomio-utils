@@ -1,0 +1,43 @@
+{
+  "name": "guomio-utils",
+  "version": "0.0.1",
+  "description": "前端工具方法",
+  "main": "lib/index.js",
+  "repository": "https://github.com/guomio/guomio-utils.git",
+  "author": "guomio <guoxf1@ziroom.com>",
+  "license": "MIT",
+  "private": false,
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rm -rf lib && node bin/build-index.js && rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-typescript": "^5.0.2",
+    "json-templater": "^1.2.0",
+    "rollup": "^2.23.0",
+    "tslib": "^2.0.1",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "@types/qs": "^6.9.4",
+    "@types/react-redux": "^7.1.9",
+    "@types/redux-actions": "^2.6.1",
+    "axios": "^0.19.2",
+    "immer": "^7.0.7",
+    "qs": "^6.9.4",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-observable": "^1.2.0",
+    "redux-persist": "^6.0.0",
+    "rxjs": "^6.6.2",
+    "vue": "^2.6.11",
+    "vuex": "^3.5.1",
+    "vuex-module-decorators": "^0.17.0"
+  }
+}
