@@ -1,4 +1,4 @@
-import { API } from '../api';
+import { API } from '../../api';
 
 export interface Response {
   data?: any;
@@ -10,7 +10,7 @@ export interface Response {
 }
 
 export const api = new API<Response>({
-  baseURL: 'https://yapi.petrelteam.com/mock/54',
+  baseURL: 'https://xxxURL/',
 });
 
 api.headers = () => ({
@@ -53,7 +53,7 @@ export interface IUser {
 /**
  * @mock 用户信息
  */
-export const getUser = api.GET<IUser, any>('/user');
+export const getUser = api.GET<IUser, any>('/guomio/user');
 
 (async function () {
   const res = await getUser({ name: ['1', '2'] });
