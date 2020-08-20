@@ -87,32 +87,32 @@ async function main() {
   });
 
   if (npmInfoRet.code === 0) {
-    const versions = await execute('latest');
-
-    await writeJSON(rootPkgFile, { ...rootPkg, version: resp.action });
-
-    run(`git add ${rootPkgFile}`);
-    run(`git commit --no-verify -m "Published version ${resp.action}"`);
-    run('git push');
-
-    versions.forEach((ver) => {
-      run(`git tag ${ver}`);
-    });
-    run('git push --tags');
-
-    console.log('Pushed updated version & tags to git');
-
-    exit(0);
-  }
-
-  async function execute(distTag) {
-    const nextVersionParsed = semver.coerce(resp.action);
-    const nextVersion = nextVersionParsed.format();
-
     const publishedPackageInfo = JSON.parse(npmInfoRet.stdout);
     if (publishedPackageInfo.versions.includes(nextVersion)) {
       throw new Error(`Version ${nextVersion} is already published in NPM`);
     }
+  }
+
+  const versions = await execute('latest');
+
+  await writeJSON(rootPkgFile, { ...rootPkg, version: resp.action });
+
+  run(`git add ${rootPkgFile}`);
+  run(`git commit --no-verify -m "Published version ${resp.action}"`);
+  run('git push');
+
+  versions.forEach((ver) => {
+    run(`git tag ${ver}`);
+  });
+  run('git push --tags');
+
+  console.log('Pushed updated version & tags to git');
+
+  exit(0);
+
+  async function execute(distTag) {
+    const nextVersionParsed = semver.coerce(resp.action);
+    const nextVersion = nextVersionParsed.format();
 
     console.log(`Starting publish of ${nextVersion}...`);
 
@@ -121,7 +121,7 @@ async function main() {
     const verPkg = require(rootPkgFile);
     await writeJSON(verPkgFile, { ...verPkg, version: nextVersion, main: 'index.js' });
 
-    run(`npm publish ${distPath} --tag ${distTag}`);
+    run(`npm publish ${distPath} --access public --tag ${distTag}`);
     console.log(`Published ${nextVersion} to NPM with distTag ${distTag}`);
 
     return nextVersion;

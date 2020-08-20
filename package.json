@@ -1,5 +1,5 @@
 {
-  "name": "guomio-utils",
+  "name": "@guomio/guomio-utils",
   "version": "0.0.1",
   "description": "前端工具方法",
   "main": "lib/index.js",
@@ -10,7 +10,8 @@
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "dev": "rollup -c --watch",
-    "build": "rm -rf lib && node bin/build-index.js && rollup -c"
+    "build": "rm -rf lib && node bin/build-index.js && rollup -c",
+    "release": "node ./scripts/publish.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
