@@ -116,10 +116,10 @@ async function main() {
 
     console.log(`Starting publish of ${nextVersion}...`);
 
-    const distPath = path.resolve(__dirname, '..', 'dist');
+    const distPath = path.resolve(rootPath, 'lib');
     const verPkgFile = path.join(distPath, 'package.json');
-    const verPkg = require(verPkgFile);
-    await writeJSON(verPkgFile, { ...verPkg, version: nextVersion });
+    const verPkg = require(rootPkgFile);
+    await writeJSON(verPkgFile, { ...verPkg, version: nextVersion, main: 'index.js' });
 
     run(`npm publish ${distPath} --tag ${distTag}`);
     console.log(`Published ${nextVersion} to NPM with distTag ${distTag}`);
