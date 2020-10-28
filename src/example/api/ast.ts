@@ -1,5 +1,5 @@
-import ast from '../../src/api/ast';
-import yapi from '../../src/api/yapi';
+import ast from '../../api/ast';
+import yapi from '../../api/yapi';
 
 const instance = yapi({
   token: 'xxxtoken',

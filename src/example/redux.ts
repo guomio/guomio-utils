@@ -7,7 +7,7 @@ import {
   createState,
   createEpicStore,
   updateReducer,
-} from '../src/redux';
+} from '../redux';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -55,7 +55,8 @@ console.log(store.getState());
 const unsubscribe = store.subscribe(() => console.log(store.getState()));
 
 store.dispatch(update({ version: '1.0.1' }));
-store.dispatch(update({ version: '1.0.2' }));
-store.dispatch(update({ version: '1.0.3' }));
+store.dispatch(increment({ version: '1.0.2' }));
+store.dispatch(init('1.0.3'));
+store.dispatch(increment({ version: '1.0.4' }));
 
 unsubscribe();

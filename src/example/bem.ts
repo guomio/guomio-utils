@@ -1,4 +1,4 @@
-import { createBEM } from '../src/bem';
+import { createBEM } from '../bem';
 
 const b = createBEM('zr-button');
 
