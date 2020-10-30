@@ -1,6 +1,6 @@
 {
   "name": "@guomio/guomio-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "前端工具方法",
   "main": "lib/index.js",
   "repository": "https://github.com/guomio/guomio-utils.git",
