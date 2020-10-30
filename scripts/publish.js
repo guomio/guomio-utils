@@ -103,9 +103,7 @@ async function main() {
   run(`git commit --no-verify -m "Published version ${resp.action}"`);
   run('git push');
 
-  versions.forEach((ver) => {
-    run(`git tag ${ver}`);
-  });
+  run(`git tag ${versions}`);
   run('git push --tags');
 
   console.log('Pushed updated version & tags to git');
