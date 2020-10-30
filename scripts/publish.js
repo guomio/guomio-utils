@@ -76,6 +76,8 @@ async function main() {
     return;
   }
 
+  const nextVersion = resp.action;
+
   console.log('Starting build...');
   run('npm run build');
   console.log('Build is done');

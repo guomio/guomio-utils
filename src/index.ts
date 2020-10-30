@@ -2,7 +2,6 @@
 
 import * as api from './api';
 import * as bem from './bem';
-import * as example from './example';
 import * as promisify from './promisify';
 import * as redux from './redux';
 import * as type from './type';
@@ -12,7 +11,6 @@ import * as vuex from './vuex';
 export {
  api,
  bem,
- example,
  promisify,
  redux,
  type,
