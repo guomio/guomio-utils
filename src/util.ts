@@ -92,14 +92,7 @@ export function isEmpty<T>(s: T): s is Nullable<T> {
     case 'string':
       return !s.trim();
     case 'object':
-      let counter = 0;
-      for (let o in s) {
-        if (s[o]) {
-          counter++;
-          break;
-        }
-      }
-      return counter === 0;
+      return Object.keys(s).length === 0;
     default:
       break;
   }
