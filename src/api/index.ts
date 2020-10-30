@@ -1,5 +1,5 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { isHTTP, combineURLs } from '../util';
+import { isHTTP, combineURLs, isBrowser } from '../util';
 import qs, { IStringifyOptions } from 'qs';
 import { urlencodedParser, formParser } from './util';
 import { ResponseHelper } from './response';
@@ -47,6 +47,10 @@ export type CustomOptions = {
    * 返回值是否是二进制文件
    */
   blob?: boolean;
+  /**
+   * 返回值是否是二进制流
+   */
+  stream?: boolean;
 
   /**
    * 格式化 url 中数组规则 (default: 'repeat')
@@ -165,7 +169,11 @@ export class API<DataType = any> {
     }
 
     if (customOptions.blob) {
-      option.responseType = 'blob';
+      option.responseType = isBrowser() ? 'blob' : 'arraybuffer';
+    }
+
+    if (customOptions.stream) {
+      option.responseType = 'stream';
     }
 
     if (customOptions.arrayFormat) {

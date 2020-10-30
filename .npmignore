@@ -2,7 +2,7 @@
 node_modules
 bin
 src
-example
+**/*/example
 
 yarn.lock
 rollup.config.js
